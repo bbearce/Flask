@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h1>Login</h1>
+<form method="POST">
+    {{ form.csrf_token }}
+    {{ form.username.label }} {{ form.username(size=20) }}
+    {{ form.password.label }} {{ form.password(size=20) }}
+    <input type="submit" value="Login">
+</form>
+
+<form method="GET", action="/logout">
+<button type="submit" value="Logout">Logout</button>
+</form>
+{% endblock %}
